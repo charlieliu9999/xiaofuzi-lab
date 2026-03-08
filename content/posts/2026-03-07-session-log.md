@@ -1,78 +1,92 @@
 ---
-title: "Session Log — 2026-03-07: Skills, MCP, and Xiaohongshu Topic Research"
+title: "会话记录 — 2026-03-07：Skills、MCP 与小红书选题调研"
 date: 2026-03-07T23:30:00+08:00
 draft: false
-tags: ["openclaw", "xiaohongshu", "medical-imaging", "research", "mcp"]
+tags: ["OpenClaw", "小红书", "医学影像", "研究", "MCP"]
 ---
 
-This post is a working log of what we planned and what we actually finished during the 2026-03-07 session.
+这篇文章是对 2026-03-07 这次会话的工作复盘：我们当时说要做什么、实际完成了什么、以及还欠哪些交付。
 
-## Goals (what we said we would do)
+一眼看结论：
+- 我们把“小红书自动化调研”的技术链路跑通了（skills + xiaohongshu-mcp）。
+- 医学影像侧的内容母题很清晰；OpenClaw 内容在小红书很热，但“OpenClaw × 医学影像”交叉内容稀缺，是差异化机会。
 
-1. **Create a GitHub repo and build a personal blog**
-   - Publish the research articles as a website.
-2. **Open a Xiaohongshu account and distribute content to social media**
-   - Repurpose website articles into Xiaohongshu posts (and later: Toutiao / X).
-3. **Run a first “Xiaohongshu topic research” workflow**
-   - Focus area: *OpenClaw / AI research*, *medical imaging*, and *AI applications in medical imaging*.
+## 目标（当时说要做的事）
 
-## What we completed
+1）**在 GitHub 开一个仓库，搭个人博客**
+- 把研究文章发布到网页上（可持续沉淀）。
 
-### 1) Skill discovery + installation
+2）**开通小红书账号，并把网页内容分发到自媒体**
+- 网页是“长文/沉淀”，小红书是“图文/传播”，两套内容互相导流。
 
-We searched for “YouTube / Xiaohongshu / Toutiao / X(Twitter) / self-media” related skills, and installed the following into the workspace `./skills/`:
+3）**先跑一轮“小红书选题调研”**
+- 聚焦：OpenClaw / AI 研究、医学影像、AI 在医学影像中的应用。
+
+## 已完成（我们实际做完了什么）
+
+### 1）Skills 搜索与安装
+
+我们在 ClawHub 搜索并安装了自媒体相关 skills（安装目录：workspace 下的 `./skills/`）：
 
 - `xiaohongshu-deep-research`
 - `xiaohongshu-publish`
 - `xhs-content-creator`
 - `toutiao-news-trends`
 - `toutiao-publish`
-- `x-post-automation` *(flagged as suspicious; we reviewed the skill description and then installed it with force)*
+- `x-post-automation`
 
-### 2) MCP (xiaohongshu-mcp) setup
+注：`x-post-automation` 当时被 VirusTotal Code Insight 标记为 suspicious（偏自动化发帖类技能常见），我们先查看了 skill 的说明，再决定安装。
 
-To enable automated search / data collection for research, we installed and started the Xiaohongshu MCP service:
+### 2）安装并启动 xiaohongshu-mcp（MCP 服务）
 
-- Downloaded and extracted the macOS (amd64) binaries for `xpzouying/xiaohongshu-mcp`.
-- Completed first-time login via QR scan.
-- Started the local server on `http://127.0.0.1:18060`.
+为了支持自动化搜索/采集，我们把 `xpzouying/xiaohongshu-mcp` 的本地服务装起来并跑通：
 
-This is required by `xiaohongshu-deep-research`.
+- 下载并解压 macOS (amd64) 二进制
+- 扫码登录（首次）
+- 启动本地服务：`http://127.0.0.1:18060`
 
-### 3) Xiaohongshu topic research runs (data collected)
+这是 `xiaohongshu-deep-research` 能工作的前置条件。
 
-We ran multiple keyword expansions and searches, de-duplicated results, ranked by a simple engagement score (likes + 2×collects + comments), and saved raw data.
+### 3）小红书选题调研：两轮数据采集已落地
 
-Research output folders were written to:
+我们做了多组关键词扩展，批量搜索 → 去重 → 按互动做简单排序（likes + 2×collects + comments），并把原始结果保存到本地。
 
-- `~/xiaohongshu-research/医学影像AI_20260307_2147/` (173 deduped posts)
-- `~/xiaohongshu-research/OpenClaw_医学影像_20260307_2203/` (191 deduped posts)
+输出目录：
 
-High-level findings:
+- `~/xiaohongshu-research/医学影像AI_20260307_2147/`（去重后 173 篇）
+- `~/xiaohongshu-research/OpenClaw_医学影像_20260307_2203/`（去重后 191 篇）
 
-- **Medical imaging** content that performs well is usually:
-  - “easy-to-understand” imaging basics (CT/MRI/X-ray, low-dose CT),
-  - career/education topics (radiology major, job anxiety),
-  - and “industry trend” summaries.
-- **OpenClaw** content performs well on “installation / deployment / practical use-cases / workflow demonstrations”.
-- The intersection **OpenClaw × medical imaging** appears under-supplied on Xiaohongshu, which suggests a strong opportunity for differentiated, deeper research content.
+主要发现（浓缩版）：
 
-## What was not finished yet (next actions)
+- **医学影像**更容易起量的母题通常是：
+  - “讲人话”的基础科普（CT/MRI/X 光、低剂量 CT）
+  - 专业/职业话题（方向选择、岗位焦虑）
+  - 行业趋势复盘（公司/产品/展会/大模型进展）
 
-1. **Publish the first deep research article**
-   - We agreed to produce a deliverable with:
-     - Top 20 benchmark posts (with links),
-     - content gap map,
-     - a clear account positioning,
-     - a 6-episode series outline,
-     - and a publish-ready long-form article.
-2. **Blog repo + website publishing pipeline**
-   - This was planned but the actual repo + Pages deployment was completed on the following day (2026-03-08).
-3. **Xiaohongshu account + distribution workflow**
-   - Account setup requires manual steps; once ready we will convert website posts to Xiaohongshu-native drafts and publish.
+- **OpenClaw**在小红书里更容易起量的是：
+  - 安装/部署/从 0 教程
+  - 实用玩法清单
+  - 工作流演示（可复用、可抄作业）
 
-## Definition of Done (for the next session)
+- **OpenClaw × 医学影像**交叉内容明显供给不足；如果做“有深度的研究+可复用工作流”，有机会占位。
 
-- One “deep research” post is live on the website.
-- A matching Xiaohongshu version (title A/B,正文, hashtags) is ready, and publishable with one click after final human approval.
+## 未完成（下一步要补齐的交付）
 
+1）**发布第一篇“OpenClaw × 医学影像”的正式深度研究文章**
+- 交付形态我们当时约定为：
+  - Top 20 对标帖子（带链接）
+  - 内容缺口地图（哪些话题没人做/没人做深）
+  - 账号定位建议（一句话定位 + 栏目设计）
+  - 6 期连载大纲
+  - 以及一篇可直接发布的长文稿
+
+2）**博客与发布链路的完善**
+- 昨天是计划项；实际 repo / Pages / 自动部署在 2026-03-08 这天完成。
+
+3）**小红书账号与分发工作流**
+- 账号注册/登录是人工步骤；完成后，我们会把网页长文改写成小红书图文体并发布。
+
+## 下一次会话的“完成标准”（Definition of Done）
+
+- 网站上至少上线 1 篇“OpenClaw × 医学影像”的正式深度研究文章。
+- 同步产出 1 份小红书版本（标题 A/B、正文、标签），经人工确认后可发布。

@@ -1,5 +1,6 @@
 baseURL = "https://charlieliu9999.github.io/xiaofuzi-lab/"
 languageCode = "zh-cn"
+defaultContentLanguage = "zh"
 title = "xiaofuzi-lab"
 theme = "PaperMod"
 
@@ -8,7 +9,7 @@ pagerSize = 10
 
 [params]
 subtitle = "Workflows & AI Automation"
-description = "Notes on workflows, AI automation, and applied research."
+description = "工作流、AI 自动化与应用研究笔记。"
 defaultTheme = "auto"
 ShowReadingTime = true
 ShowBreadCrumbs = true
@@ -21,11 +22,11 @@ Title = "小福子实验室"
 Content = "Workflows & AI Automation · OpenClaw · 医学影像AI · Agentic workflows"
 
 [[menu.main]]
-name = "Posts"
+name = "文章"
 url = "/posts/"
 weight = 1
 
 [[menu.main]]
-name = "About"
+name = "关于"
 url = "/about/"
 weight = 2
