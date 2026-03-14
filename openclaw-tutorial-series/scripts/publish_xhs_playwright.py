@@ -49,56 +49,48 @@ def main():
 
     with sync_playwright() as p:
         browser = p.chromium.launch_persistent_context(
-            user_data_dir=str(Path.home() / ".openclaw" / "xhs-playwright-profile"),
+            user_data_dir=str(Path.home() / ".openclaw" / "browser" / "openclaw" / "user-data"),
             headless=False,
         )
         page = browser.new_page()
         page.goto("https://creator.xiaohongshu.com/publish/publish?source=official", wait_until="domcontentloaded")
 
-        # If not logged in, user needs to complete SMS login manually once.
-        if page.locator("text=短信登录").count() > 0 or page.locator("text=登 录").count() > 0:
+        # not logged in
+        if page.locator("input[placeholder='手机号']").count() > 0 or page.locator("text=短信登录").count() > 0:
             print("Login required. Please log in manually in opened browser, then rerun.")
             browser.close()
             return
 
-        # Click 写长文 if present
         if page.locator("text=写长文").count() > 0:
             page.locator("text=写长文").first.click()
         if page.locator("text=新的创作").count() > 0:
             page.locator("text=新的创作").first.click()
 
-        # Fill title/body (selectors may evolve; keep fallback strategy)
-        filled = False
-        for sel in ["textarea", "[contenteditable='true']", "input[placeholder*='标题']"]:
-            try:
-                loc = page.locator(sel).first
-                if loc.count() > 0:
-                    loc.click()
-                    loc.fill(title)
-                    filled = True
-                    break
-            except Exception:
-                pass
+        try:
+            title_input = page.locator("input[placeholder*='标题'], textarea").first
+            if title_input.count() > 0:
+                title_input.click()
+                title_input.fill(title)
+        except Exception:
+            pass
 
-        # body area
         try:
             editor = page.locator("[contenteditable='true']").last
             if editor.count() > 0:
                 editor.click()
-                page.keyboard.type(body, delay=10)
+                page.keyboard.type(body, delay=8)
         except Exception:
             pass
 
-        # Optional: click 一键排版
         try:
             if page.locator("text=一键排版").count() > 0:
                 page.locator("text=一键排版").first.click()
         except Exception:
             pass
 
-        # Publish
-        if page.locator("text=发布").count() > 0:
-            page.locator("text=发布").first.click()
+        publish_btn = page.locator("button:has-text('发布')").first
+        if publish_btn.count() > 0:
+            publish_btn.click()
             print("Publish clicked.")
         else:
             print("Could not find publish button. Please publish manually in current page.")
