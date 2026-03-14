@@ -1,6 +1,51 @@
 {
-  "generated_at_utc": "2026-03-14T03:13:21.854008+00:00",
-  "github_error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)>",
-  "docs_error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)>",
-  "videos_error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)>"
+  "generated_at_utc": "2026-03-14T10:00:01.369840+00:00",
+  "github": {
+    "repo": {
+      "full_name": "openclaw/openclaw",
+      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "stars": 311791,
+      "forks": 59361,
+      "open_issues": 13216,
+      "html_url": "https://github.com/openclaw/openclaw",
+      "updated_at": "2026-03-14T09:59:31Z"
+    },
+    "releases": [
+      {
+        "name": "openclaw 2026.3.13",
+        "tag": "v2026.3.13",
+        "published_at": "2026-03-14T05:19:41Z",
+        "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.3.13"
+      },
+      {
+        "name": "openclaw 2026.3.13-beta.1",
+        "tag": "v2026.3.13-beta.1",
+        "published_at": "2026-03-14T05:17:09Z",
+        "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.3.13-beta.1"
+      },
+      {
+        "name": "openclaw 2026.3.12",
+        "tag": "v2026.3.12",
+        "published_at": "2026-03-13T04:26:46Z",
+        "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.3.12"
+      },
+      {
+        "name": "openclaw 2026.3.11",
+        "tag": "v2026.3.11",
+        "published_at": "2026-03-12T05:07:15Z",
+        "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.3.11"
+      },
+      {
+        "name": "openclaw 2026.3.11-beta.1",
+        "tag": "v2026.3.11-beta.1",
+        "published_at": "2026-03-12T04:23:39Z",
+        "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.3.11-beta.1"
+      }
+    ]
+  },
+  "docs": {
+    "home": "https://docs.openclaw.ai",
+    "links": []
+  },
+  "videos_error": "HTTP Error 400: Bad Request"
 }
