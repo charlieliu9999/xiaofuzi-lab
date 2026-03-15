@@ -73,3 +73,26 @@ Call log:
 wrote data/sources.json
 wrote output/github/2026-03-14-openclaw-tutorial.md
 wrote output/xhs/2026-03-14-xhs.md
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+[main 4d78b61] chore: daily openclaw tutorial update
+ Committer: Lizzy <lizzysong@MacBook16G.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 240 insertions(+), 8 deletions(-)
+ create mode 100644 openclaw-tutorial-series/docs/CONTENT_QUALITY_GATE.zh-CN.md
+ create mode 100644 openclaw-tutorial-series/docs/PIPELINE_SOP.zh-CN.md
+fatal: could not read Username for 'https://github.com': Device not configured
+===== 2026-03-15 18:00:00 START =====
+wrote data/sources.json
+wrote output/github/2026-03-15-openclaw-tutorial.md
+wrote output/xhs/2026-03-15-xhs.md
