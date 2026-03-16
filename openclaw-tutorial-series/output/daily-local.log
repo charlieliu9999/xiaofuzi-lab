@@ -96,3 +96,35 @@ fatal: could not read Username for 'https://github.com': Device not configured
 wrote data/sources.json
 wrote output/github/2026-03-15-openclaw-tutorial.md
 wrote output/xhs/2026-03-15-xhs.md
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+[main 30bfbce] chore: daily openclaw tutorial update
+ Committer: Lizzy <lizzysong@MacBook16G.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 13 files changed, 185 insertions(+), 8 deletions(-)
+ create mode 100644 openclaw-tutorial-series/output/github/2026-03-15-memory-skill-tutorial.zh-CN.md
+ create mode 100644 openclaw-tutorial-series/output/github/2026-03-15-openclaw-tutorial.md
+ create mode 100644 openclaw-tutorial-series/output/github/assets/2026-03-15-memory-skill/shot_120.jpg
+ create mode 100644 openclaw-tutorial-series/output/github/assets/2026-03-15-memory-skill/shot_170.jpg
+ create mode 100644 openclaw-tutorial-series/output/github/assets/2026-03-15-memory-skill/shot_230.jpg
+ create mode 100644 openclaw-tutorial-series/output/github/assets/2026-03-15-memory-skill/shot_320.jpg
+ create mode 100644 openclaw-tutorial-series/output/github/assets/2026-03-15-memory-skill/shot_420.jpg
+ create mode 100644 openclaw-tutorial-series/output/github/assets/2026-03-15-memory-skill/shot_55.jpg
+ create mode 100644 openclaw-tutorial-series/output/github/assets/2026-03-15-memory-skill/shot_560.jpg
+ create mode 100644 openclaw-tutorial-series/output/github/assets/2026-03-15-memory-skill/shot_740.jpg
+ create mode 100644 openclaw-tutorial-series/output/xhs/2026-03-15-xhs.md
+fatal: could not read Username for 'https://github.com': Device not configured
+===== 2026-03-16 18:00:00 START =====
+wrote data/sources.json
+wrote output/github/2026-03-16-openclaw-tutorial.md
+wrote output/xhs/2026-03-16-xhs.md

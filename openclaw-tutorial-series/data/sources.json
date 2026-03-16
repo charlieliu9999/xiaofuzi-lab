@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-03-15T10:00:01.475489+00:00",
+  "generated_at_utc": "2026-03-16T10:00:01.338922+00:00",
   "github": {
     "repo": {
       "full_name": "openclaw/openclaw",
       "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
-      "stars": 313926,
-      "forks": 59918,
-      "open_issues": 13896,
+      "stars": 316284,
+      "forks": 60559,
+      "open_issues": 14200,
       "html_url": "https://github.com/openclaw/openclaw",
-      "updated_at": "2026-03-15T09:58:22Z"
+      "updated_at": "2026-03-16T09:59:59Z"
     },
     "releases": [
       {
