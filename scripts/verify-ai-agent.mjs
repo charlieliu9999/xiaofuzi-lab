@@ -134,6 +134,16 @@ function checkSourceTree() {
   assert(quiz.blocks === 10, `测验数据块应为 10，实际 ${quiz.blocks}`);
   assert(quiz.total === 60, `测验题应为 60，实际 ${quiz.total}`);
 
+  const lessonBundle = readText(path.join(appRoot, "_next/static/chunks/app/learn/[chapterId]/[lessonId]/page-a6c141792c362842.js"));
+  assert(
+    lessonBundle.includes('if("ready"!==d.status)return;c(e=>(0,x.ob)(e,i.id,l.id))},[i.id,l.id,c,d.status]'),
+    "打开课时没有等本地存储就绪后再记录续学位置",
+  );
+  assert(
+    lessonBundle.includes("window.clearTimeout(n),c(e=>(0,x.bS)(e,i.id,l.id,y))"),
+    "离开课次时没有立即保存未落盘的笔记",
+  );
+
   const home = readText(path.join(appRoot, "index.html"));
   assert(home.includes(`${appPrefix}/_next/`), "首页资源没有 /xiaofuzi-lab/ai-agent 前缀");
   assert(home.includes('href="/xiaofuzi-lab/ai-agent/"'), "首页导航缺少带斜杠的学习台链接");
@@ -494,7 +504,40 @@ async function checkBrowser(origin) {
     await clickHref(`${appPrefix}/chapters/1/`);
     await waitFor(async () => (await currentPath()) === `${appPrefix}/chapters/1/` ? "ready" : "", "进入第一章");
     await clickHref(`${appPrefix}/learn/1/react/`);
-    await waitFor(async () => (await bodyText()).includes("把一次工具调用写成四行") ? "ready" : "", "进入课次");
+    await waitFor(async () => (await bodyText()).includes("把一次工具调用写成四行") && (await bodyText()).includes("我读完这一课") ? "ready" : "", "进入课次");
+    const noted = await page.send("Runtime.evaluate", {
+      expression: `new Promise((resolve) => { const el = document.querySelector("textarea"); if (!el) { resolve("missing"); return; } const set = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, "value").set; set.call(el, "刷新后还在的笔记"); el.dispatchEvent(new Event("input", { bubbles: true })); requestAnimationFrame(() => requestAnimationFrame(() => resolve(el.value))); })`,
+      awaitPromise: true,
+      returnByValue: true,
+    });
+    assert(noted.result.value === "刷新后还在的笔记", "课次笔记输入没有写进页面");
+    const nextLesson = await page.send("Runtime.evaluate", {
+      expression: `(() => { const node = [...document.querySelectorAll("a")].find((item) => item.textContent.includes("下一课")); return node ? node.getAttribute("href") : ""; })()`,
+      returnByValue: true,
+    });
+    assert(String(nextLesson.result.value || "").includes("/learn/"), `下一课链接不对: ${nextLesson.result.value}`);
+    if (String(nextLesson.result.value || "").includes("/learn/")) {
+      await clickHref(nextLesson.result.value);
+      await waitFor(async () => (await currentPath()) === nextLesson.result.value ? "ready" : "", "立即进入下一课");
+      await clickHref(`${appPrefix}/learn/1/react/`);
+      const kept = await waitFor(async () => {
+        const result = await page.send("Runtime.evaluate", {
+          expression: `document.querySelector("textarea") ? document.querySelector("textarea").value : ""`,
+          returnByValue: true,
+        });
+        return result.result.value === "刷新后还在的笔记" ? "ready" : "";
+      }, "笔记在换课之后还在");
+      assert(kept === "ready", "离开课次后笔记没有保存");
+    }
+    await open(`${appPrefix}/`);
+    const resumeHref = await waitFor(async () => {
+      const result = await page.send("Runtime.evaluate", {
+        expression: `(() => { const node = [...document.querySelectorAll("a")].find((item) => item.textContent.trim() === "继续学习" || item.textContent.trim() === "从第 1 章开始"); return node ? node.getAttribute("href") : ""; })()`,
+        returnByValue: true,
+      });
+      return String(result.result.value || "").includes("/learn/") ? result.result.value : "";
+    }, "首页续学链接");
+    assert(resumeHref === `${appPrefix}/learn/1/react/`, `续学位置应回到刚打开的课，实际 ${resumeHref}`);
     await open(`${appPrefix}/quiz/1/`);
     await waitFor(async () => (await bodyText()).includes("最小工程公式") ? "ready" : "", "打开测验");
     for (let question = 0; question < 6; question += 1) {
