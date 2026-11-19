@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+2:I[4206,["688","static/chunks/688-1447f4a83fe198ec.js","619","static/chunks/619-ba102abea3e3d0e4.js","824","static/chunks/824-dac603d046efebbb.js","206","static/chunks/206-7cb0944b5869780d.js","177","static/chunks/app/layout-444e9050207c3ac8.js"],"LearningProvider"]
+3:I[5291,["688","static/chunks/688-1447f4a83fe198ec.js","619","static/chunks/619-ba102abea3e3d0e4.js","824","static/chunks/824-dac603d046efebbb.js","206","static/chunks/206-7cb0944b5869780d.js","177","static/chunks/app/layout-444e9050207c3ac8.js"],"AppShell"]
+4:I[9766,[],""]
+5:I[8924,[],""]
+6:I[3352,["619","static/chunks/619-ba102abea3e3d0e4.js","345","static/chunks/app/not-found-b96f6ed4c05aef30.js"],"default"]
+7:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","345","static/chunks/app/not-found-b96f6ed4c05aef30.js"],""]
+8:I[4218,["688","static/chunks/688-1447f4a83fe198ec.js","619","static/chunks/619-ba102abea3e3d0e4.js","206","static/chunks/206-7cb0944b5869780d.js","974","static/chunks/app/page-5565bac72cfca40a.js"],"HomeScreen"]
+9:I[4431,[],"OutletBoundary"]
+b:I[5278,[],"AsyncMetadataOutlet"]
+d:I[4431,[],"ViewportBoundary"]
+f:I[4431,[],"MetadataBoundary"]
+10:"$Sreact.suspense"
+12:I[7150,[],""]
+:HL["/xiaofuzi-lab/ai-agent/_next/static/css/ab8db70ca9ba8dae.css","style"]
+0:{"P":null,"b":"Z13ZIlzSlUBzJyOWfZE1I","p":"/xiaofuzi-lab/ai-agent","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/xiaofuzi-lab/ai-agent/_next/static/css/ab8db70ca9ba8dae.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto max-w-lg py-16","children":[["$","$L6",null,{"ref":"$undefined","icon":{"name":"book-open","size":24,"node":[["path",{"d":"M12 5v16","key":"1f6ucr"}],["path",{"d":"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z","key":"1fyvmf"}]]},"className":"mb-4 size-8 text-primary"}],["$","h1",null,{"className":"text-2xl font-semibold","children":"没有这一页"}],["$","p",null,{"className":"mt-2 text-muted-foreground","children":"章节或课次编号不在当前这十章里。"}],["$","$L7",null,{"href":"/chapters","className":"mt-6 inline-block text-primary underline","children":"回到十章目录"}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L8",null,{}],null,["$","$L9",null,{"children":["$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Ld",null,{"children":"$Le"}],null],["$","$Lf",null,{"children":["$","div",null,{"hidden":true,"children":["$","$10",null,{"fallback":null,"children":"$L11"}]}]}]]}],false]],"m":"$undefined","G":["$12",[]],"s":false,"S":true}
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+a:null
+13:I[622,[],"IconMark"]
+c:{"metadata":[["$","title","0",{"children":"Agent 学习伴侣"}],["$","meta","1",{"name":"description","content":"配合李博杰《深入理解 AI Agent》的独立中文学习系统。进度保存在本机浏览器。"}],["$","link","2",{"rel":"icon","href":"/xiaofuzi-lab/ai-agent/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","3",{"rel":"icon","href":"/xiaofuzi-lab/ai-agent/icon.svg?8af7ff86a23bc488","type":"image/svg+xml","sizes":"any"}],["$","$L13","4",{}]],"error":null,"digest":"$undefined"}
+11:"$c:metadata"
